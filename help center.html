@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Help Center - Camera App</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg: #0f0f13;
+      --card-bg: #18181b;
+      --border: #27272a;
+      --text: #e4e4e7;
+      --text-muted: #a1a1aa;
+      --heading: #ffffff;
+      --accent: #93c5fd;
+      --footer: #71717a;
+      --hover-bg: #27272a;
+    }
+
+    body.light {
+      --bg: #f4f4f5;
+      --card-bg: #ffffff;
+      --border: #e4e4e7;
+      --text: #3f3f46;
+      --text-muted: #71717a;
+      --heading: #18181b;
+      --accent: #2563eb;
+      --footer: #a1a1aa;
+      --hover-bg: #f4f4f5;
+    }
+
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      padding: 40px 20px;
+      line-height: 1.6;
+      transition: background 0.4s ease, color 0.4s ease;
+    }
+
+    .container {
+      max-width: 780px;
+      margin: 0 auto;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 40px 36px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+      position: relative;
+      animation: fadeInUp 0.6s ease-out;
+      transition: background 0.4s ease, border 0.4s ease;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .theme-toggle {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: var(--border);
+      border: none;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+
+    .theme-toggle:hover {
+      transform: scale(1.15) rotate(15deg);
+    }
+
+    h1 {
+      font-size: 1.9rem;
+      color: var(--heading);
+      margin-bottom: 8px;
+    }
+
+    .subtitle {
+      color: var(--text-muted);
+      font-size: 1rem;
+      margin-bottom: 32px;
+    }
+
+    .search-box {
+      width: 100%;
+      padding: 14px 18px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: var(--bg);
+      color: var(--text);
+      font-size: 1rem;
+      margin-bottom: 32px;
+      outline: none;
+      transition: border 0.3s ease;
+    }
+
+    .search-box:focus {
+      border-color: var(--accent);
+    }
+
+    .category {
+      margin-bottom: 28px;
+    }
+
+    .category h2 {
+      font-size: 1.15rem;
+      color: var(--accent);
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .faq-item {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      margin-bottom: 10px;
+      overflow: hidden;
+      transition: background 0.3s ease;
+    }
+
+    .faq-question {
+      padding: 16px 18px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 500;
+      color: var(--heading);
+      transition: background 0.3s ease;
+    }
+
+    .faq-question:hover {
+      background: var(--hover-bg);
+    }
+
+    .faq-question span {
+      font-size: 1.2rem;
+      transition: transform 0.3s ease;
+    }
+
+    .faq-item.active .faq-question span {
+      transform: rotate(45deg);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease, padding 0.35s ease;
+      padding: 0 18px;
+      color: var(--text);
+      font-size: 0.95rem;
+    }
+
+    .faq-item.active .faq-answer {
+      max-height: 300px;
+      padding: 0 18px 16px;
+    }
+
+    .contact-box {
+      margin-top: 40px;
+      padding: 24px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      text-align: center;
+    }
+
+    .contact-box h3 {
+      color: var(--heading);
+      margin-bottom: 10px;
+    }
+
+    .contact-box p {
+      color: var(--text-muted);
+      margin-bottom: 16px;
+    }
+
+    .contact-btn {
+      display: inline-block;
+      background: var(--accent);
+      color: #fff;
+      padding: 12px 28px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    .contact-btn:hover {
+      transform: translateY(-2px);
+      opacity: 0.9;
+    }
+
+    .footer {
+      margin-top: 36px;
+      text-align: center;
+      font-size: 0.9rem;
+      color: var(--footer);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <button class="theme-toggle" id="themeToggle" title="Toggle Dark/Light Mode">🌙</button>
+
+    <h1>Help Center</h1>
+    <p class="subtitle">Find answers to common questions about Camera App</p>
+
+    <input type="text" class="search-box" id="searchInput" placeholder="Search for help...">
+
+    <!-- Getting Started -->
+    <div class="category">
+      <h2>🚀 Getting Started</h2>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          How do I take a photo?
+          <span>+</span>
+        </div>
+        <div class="faq-answer">
+          Open the app and tap the large shutter button at the bottom center of the screen. 
+          You can also use volume buttons as a shutter on most devices.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          How do I switch between front and rear camera?
+          <span>+</span>
+        </div>
+        <div class="faq-answer">
+          Tap the camera switch icon (usually located at the top or bottom right) to toggle between the front and rear cameras.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          How do I record a video?
+          <span>+</span>
+        </div>
+        <div class="faq-answer">
+          Swipe to the Video mode or tap the video icon, then press the shutter button to start and stop recording.
+        </div>
+      </div>
+    </div>
+
+    <!-- Features -->
+    <div class="category">
+      <h2>✨ Features</h2>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          How do I apply filters?
+          <span>+</span>
+        </div>
+        <div class="faq-answer">
+          Tap the filter icon while in camera mode. Browse available filters and tap one to apply it in real time before taking the photo.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          What is Night Mode and how do I use it?
+          <span>+</span>
+        </div>
+        <div class="faq-answer">
+          Night Mode automatically activates in low-light conditions, or you can enable it manually from the mode options. 
+          Hold the phone steady for best results.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          Can I use the grid for better composition?
+          <span>+</span>
+        </div>
+        <div class="faq-answer">
+          Yes. Go to Settings → Camera → Grid and turn it on. A rule-of-thirds grid will appear on the viewfinder.
+        </div>
+      </div>
+    </div>
+
+    <!-- Troubleshooting -->
+    <div class="category">
+      <h2>🔧 Troubleshooting</h2>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          The app crashes when I open it. What should I do?
+          <span>+</span>
+        </div>
+        <div class="faq-answer">
+          Try these steps: 1) Force close the app and reopen it. 2) Restart your device. 
+          3) Clear the app cache from your phone settings. 4) Update the app if a new version is available.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          Photos are blurry. How can I fix this?
+          <span>+</span>
+        </div>
+        <div class="faq-answer">
+          Make sure the lens is clean. Hold the phone steady and ensure there is enough light. 
+          Try tapping on the subject to focus before taking the photo.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          Why can’t the app access my camera?
+          <span>+</span>
+        </div>
+        <div class="faq-answer">
+          Go to your device Settings → Apps → Camera App → Permissions and make sure Camera and Microphone permissions are allowed.
+        </div>
+      </div>
+    </div>
+
+    <!-- Account & Privacy -->
+    <div class="category">
+      <h2>🔒 Privacy & Storage</h2>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          Where are my photos saved?
+          <span>+</span>
+        </div>
+        <div class="faq-answer">
+          All photos and videos are saved directly to your device’s gallery or camera folder. 
+          We do not upload or store your media on our servers.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          Does the app collect my personal data?
+          <span>+</span>
+        </div>
+        <div class="faq-answer">
+          No. Camera App is privacy-focused. We do not collect or store your photos or personal information. 
+          You can read our full Privacy Policy for more details.
+        </div>
+      </div>
+    </div>
+
+    <!-- Contact -->
+    <div class="contact-box">
+      <h3>Still need help?</h3>
+      <p>Our support team is ready to assist you.</p>
+      <a href="mailto:support@cameraapp.com" class="contact-btn">Contact Support</a>
+    </div>
+
+    <div class="footer">
+      Camera App · Made with ❤️ in Bangladesh
+    </div>
+
+  </div>
+
+  <script>
+    // Theme Toggle
+    const toggleBtn = document.getElementById('themeToggle');
+    const body = document.body;
+
+    if (localStorage.getItem('theme') === 'light') {
+      body.classList.add('light');
+      toggleBtn.textContent = '☀️';
+    }
+
+    toggleBtn.addEventListener('click', () => {
+      body.classList.toggle('light');
+      if (body.classList.contains('light')) {
+        toggleBtn.textContent = '☀️';
+        localStorage.setItem('theme', 'light');
+      } else {
+        toggleBtn.textContent = '🌙';
+        localStorage.setItem('theme', 'dark');
+      }
+    });
+
+    // FAQ Accordion
+    document.querySelectorAll('.faq-question').forEach(question => {
+      question.addEventListener('click', () => {
+        const item = question.parentElement;
+        item.classList.toggle('active');
+      });
+    });
+
+    // Simple Search
+    const searchInput = document.getElementById('searchInput');
+    searchInput.addEventListener('input', (e) => {
+      const term = e.target.value.toLowerCase();
+      document.querySelectorAll('.faq-item').forEach(item => {
+        const text = item.textContent.toLowerCase();
+        item.style.display = text.includes(term) ? 'block' : 'none';
+      });
+    });
+  </script>
+
+</body>
+</html>
