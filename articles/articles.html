@@ -75,14 +75,14 @@
       localStorage.setItem('theme', isLight ? 'light' : 'dark');
     };
 
-    // Load articles
-    fetch('articles.json')
+    // Load articles (Fixed paths)
+    fetch('articles/articles.json')
       .then(res => res.json())
       .then(data => {
         const grid = document.getElementById('grid');
         data.forEach(article => {
           const a = document.createElement('a');
-          a.href = `article-${article.id}.html`;
+          a.href = `articles/article-${article.id}.html`;
           a.className = 'card';
           a.innerHTML = `
             <div class="card-img">${article.emoji}</div>
