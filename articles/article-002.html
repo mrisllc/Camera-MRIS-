@@ -3,77 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>How to Master Night Photography - Camera App</title>
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    :root {
-      --bg: #0f0f13; --card: #18181b; --border: #27272a;
-      --text: #e4e4e7; --muted: #a1a1aa; --heading: #fff; --accent: #93c5fd;
-    }
-    body.light {
-      --bg: #f4f4f5; --card: #fff; --border: #e4e4e7;
-      --text: #3f3f46; --muted: #71717a; --heading: #18181b; --accent: #2563eb;
-    }
-    body {
-      font-family: system-ui, sans-serif;
-      background: var(--bg); color: var(--text);
-      line-height: 1.7; padding: 40px 20px; transition: 0.3s;
-    }
-    .theme-toggle {
-      position: fixed; top: 20px; right: 20px;
-      width: 44px; height: 44px; border-radius: 50%;
-      border: 1px solid var(--border); background: var(--card);
-      font-size: 1.2rem; cursor: pointer;
-    }
-    .container { max-width: 720px; margin: 0 auto; }
-    .back { color: var(--accent); text-decoration: none; font-size: 0.95rem; }
-    .back:hover { text-decoration: underline; }
-    .tag {
-      display: inline-block; margin: 20px 0 10px;
-      font-size: 0.8rem; color: var(--accent);
-      background: rgba(147,197,253,0.12); padding: 4px 12px; border-radius: 50px;
-    }
-    h1 { color: var(--heading); font-size: 1.8rem; margin-bottom: 12px; }
-    .meta { color: var(--muted); font-size: 0.9rem; margin-bottom: 30px; }
-    .content { font-size: 1.05rem; white-space: pre-line; }
-  </style>
+  <title>Solvian Article 002</title>
 </head>
 <body>
-  <button class="theme-toggle" id="themeToggle">🌙</button>
-
-  <div class="container">
-    <a href="articles.html" class="back">← Back to Articles</a>
-
-    <div class="tag">Night Mode</div>
-    <h1>How to Master Night Photography</h1>
-    <div class="meta">7 min read · Sep 5, 2026</div>
-
-    <div class="content">
-Night photography can be challenging, but with the right techniques you can get amazing results.
-
-- Use Night Mode when available.
-- Keep your phone as steady as possible.
-- Look for light sources like street lamps or neon signs.
-- Avoid using flash in most cases.
-- Shoot in RAW if your phone supports it.
-- Use a tripod or rest your phone on a stable surface.
-
-Practice in different lighting conditions to understand how your camera handles darkness.
-    </div>
-  </div>
-
-  <script>
-    const btn = document.getElementById('themeToggle');
-    if (localStorage.getItem('theme') === 'light') {
-      document.body.classList.add('light');
-      btn.textContent = '☀️';
-    }
-    btn.onclick = () => {
-      document.body.classList.toggle('light');
-      const isLight = document.body.classList.contains('light');
-      btn.textContent = isLight ? '☀️' : '🌙';
-      localStorage.setItem('theme', isLight ? 'light' : 'dark');
-    };
-  </script>
+  <h1>Solvian Article 002</h1>
+  <p><strong>Category:</strong> General</p>
+  <p><strong>Date:</strong> 2026-08-29</p>
+  <hr>
+  <p>This is the official Solvian article #002.</p>
+  <p>Replace this content with your real article.</p>
+  <hr>
+  <p><a href="index.html">← Back to Articles</a></p>
 </body>
 </html>
