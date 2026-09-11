@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy - Camera App</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg: #0f0f13;
+      --card-bg: #18181b;
+      --border: #27272a;
+      --text: #e4e4e7;
+      --text-muted: #a1a1aa;
+      --heading: #ffffff;
+      --accent: #93c5fd;
+      --footer: #71717a;
+    }
+
+    body.light {
+      --bg: #f4f4f5;
+      --card-bg: #ffffff;
+      --border: #e4e4e7;
+      --text: #3f3f46;
+      --text-muted: #71717a;
+      --heading: #18181b;
+      --accent: #2563eb;
+      --footer: #a1a1aa;
+    }
+
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      padding: 40px 20px;
+      line-height: 1.7;
+      transition: background 0.4s ease, color 0.4s ease;
+    }
+
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 40px 36px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+      position: relative;
+      animation: fadeInUp 0.6s ease-out;
+      transition: background 0.4s ease, border 0.4s ease;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .theme-toggle {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: var(--border);
+      border: none;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+
+    .theme-toggle:hover {
+      transform: scale(1.15) rotate(15deg);
+    }
+
+    h1 {
+      font-size: 1.9rem;
+      color: var(--heading);
+      margin-bottom: 8px;
+      transition: color 0.4s ease;
+    }
+
+    .updated {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      margin-bottom: 32px;
+    }
+
+    h2 {
+      font-size: 1.2rem;
+      color: var(--accent);
+      margin: 28px 0 12px;
+      transition: color 0.4s ease;
+    }
+
+    p, li {
+      color: var(--text);
+      font-size: 0.98rem;
+      margin-bottom: 12px;
+      transition: color 0.4s ease;
+    }
+
+    ul {
+      padding-left: 20px;
+      margin-bottom: 16px;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    .footer {
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      font-size: 0.9rem;
+      color: var(--footer);
+      transition: color 0.4s ease, border 0.4s ease;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <button class="theme-toggle" id="themeToggle" title="Toggle Dark/Light Mode">🌙</button>
+
+    <h1>Privacy Policy</h1>
+    <div class="updated">Last updated: September 11, 2026</div>
+
+    <p>
+      Camera App ("we", "our", or "us") is committed to protecting your privacy. 
+      This Privacy Policy explains how we handle your information when you use our application.
+    </p>
+
+    <h2>1. Information We Collect</h2>
+    <p>We designed Camera App with privacy in mind. Here's what we collect:</p>
+    <ul>
+      <li><strong>Photos & Videos:</strong> These are stored only on your device. We do not upload, access, or store them on our servers.</li>
+      <li><strong>Device Information:</strong> We may collect basic device information (such as device model and OS version) only for improving app performance and fixing bugs.</li>
+      <li><strong>Usage Data:</strong> Anonymous analytics may be collected to understand how the app is used (e.g. feature popularity).</li>
+    </ul>
+
+    <h2>2. How We Use Your Information</h2>
+    <p>We use the limited information we collect only for the following purposes:</p>
+    <ul>
+      <li>To provide and maintain the Camera App</li>
+      <li>To improve app performance and user experience</li>
+      <li>To fix bugs and ensure security</li>
+    </ul>
+
+    <h2>3. Data Storage & Security</h2>
+    <p>
+      All photos and videos you capture remain on your device. 
+      We do not have access to your media files. 
+      Any anonymous analytics data is stored securely and is not linked to your identity.
+    </p>
+
+    <h2>4. Third-Party Services</h2>
+    <p>
+      Camera App may use third-party services (such as analytics tools) that collect anonymous data. 
+      These services have their own privacy policies. We do not sell or share your personal data with third parties for advertising.
+    </p>
+
+    <h2>5. Your Rights</h2>
+    <p>You have full control over your data:</p>
+    <ul>
+      <li>You can delete the app and all associated data at any time</li>
+      <li>You can clear the app cache from your device settings</li>
+      <li>Since we don’t store your photos, there is nothing to request deletion of from our side</li>
+    </ul>
+
+    <h2>6. Children's Privacy</h2>
+    <p>
+      Camera App is not directed at children under 13. 
+      We do not knowingly collect personal information from children.
+    </p>
+
+    <h2>7. Changes to This Policy</h2>
+    <p>
+      We may update this Privacy Policy from time to time. 
+      Any changes will be posted on this page with an updated date.
+    </p>
+
+    <h2>8. Contact Us</h2>
+    <p>
+      If you have any questions about this Privacy Policy, please contact us at:<br>
+      <strong>Email:</strong> <a href="mailto:privacy@cameraapp.com">privacy@cameraapp.com</a>
+    </p>
+
+    <div class="footer">
+      Camera App · Made with ❤️ in Bangladesh
+    </div>
+
+  </div>
+
+  <script>
+    const toggleBtn = document.getElementById('themeToggle');
+    const body = document.body;
+
+    if (localStorage.getItem('theme') === 'light') {
+      body.classList.add('light');
+      toggleBtn.textContent = '☀️';
+    }
+
+    toggleBtn.addEventListener('click', () => {
+      body.classList.toggle('light');
+
+      if (body.classList.contains('light')) {
+        toggleBtn.textContent = '☀️';
+        localStorage.setItem('theme', 'light');
+      } else {
+        toggleBtn.textContent = '🌙';
+        localStorage.setItem('theme', 'dark');
+      }
+    });
+  </script>
+
+</body>
+</html>
