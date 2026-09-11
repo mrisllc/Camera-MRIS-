@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About - Camera App</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg: #0f0f13;
+      --card-bg: #18181b;
+      --border: #27272a;
+      --text: #e4e4e7;
+      --text-muted: #a1a1aa;
+      --heading: #ffffff;
+      --accent: #93c5fd;
+      --check: #60a5fa;
+      --footer: #71717a;
+    }
+
+    body.light {
+      --bg: #f4f4f5;
+      --card-bg: #ffffff;
+      --border: #e4e4e7;
+      --text: #3f3f46;
+      --text-muted: #71717a;
+      --heading: #18181b;
+      --accent: #2563eb;
+      --check: #3b82f6;
+      --footer: #a1a1aa;
+    }
+
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      line-height: 1.6;
+      transition: background 0.4s ease, color 0.4s ease;
+    }
+
+    .about-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      max-width: 460px;
+      width: 100%;
+      padding: 40px 32px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+      position: relative;
+      transition: background 0.4s ease, border 0.4s ease, box-shadow 0.4s ease;
+      animation: fadeInUp 0.6s ease-out;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Toggle Button */
+    .theme-toggle {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: var(--border);
+      border: none;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+
+    .theme-toggle:hover {
+      transform: scale(1.15) rotate(15deg);
+    }
+
+    .theme-toggle:active {
+      transform: scale(0.95);
+    }
+
+    .app-icon {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+      border-radius: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 38px;
+      margin: 0 auto 18px;
+      transition: transform 0.4s ease;
+      animation: popIn 0.6s ease-out 0.2s both;
+    }
+
+    .app-icon:hover {
+      transform: scale(1.08) rotate(5deg);
+    }
+
+    @keyframes popIn {
+      from {
+        opacity: 0;
+        transform: scale(0.5);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 1.8rem;
+      color: var(--heading);
+      margin-bottom: 6px;
+      transition: color 0.4s ease;
+      animation: fadeIn 0.6s ease-out 0.3s both;
+    }
+
+    .version {
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      margin-bottom: 28px;
+      transition: color 0.4s ease;
+      animation: fadeIn 0.6s ease-out 0.35s both;
+    }
+
+    .section {
+      margin-bottom: 26px;
+      animation: fadeIn 0.6s ease-out both;
+    }
+
+    .section:nth-child(5) { animation-delay: 0.4s; }
+    .section:nth-child(6) { animation-delay: 0.45s; }
+    .section:nth-child(7) { animation-delay: 0.5s; }
+
+    .section h2 {
+      font-size: 1.1rem;
+      color: var(--accent);
+      margin-bottom: 10px;
+      transition: color 0.4s ease;
+    }
+
+    .section p {
+      color: var(--text);
+      font-size: 0.98rem;
+      transition: color 0.4s ease;
+    }
+
+    .features {
+      margin-top: 8px;
+    }
+
+    .features li {
+      color: var(--text);
+      margin-bottom: 6px;
+      list-style: none;
+      position: relative;
+      transition: color 0.4s ease, transform 0.3s ease;
+    }
+
+    .features li:hover {
+      transform: translateX(6px);
+    }
+
+    .features li::before {
+      content: "✓";
+      color: var(--check);
+      margin-right: 8px;
+      font-weight: bold;
+      transition: color 0.4s ease;
+    }
+
+    .divider {
+      height: 1px;
+      background: var(--border);
+      margin: 24px 0;
+      transition: background 0.4s ease;
+    }
+
+    .info-list {
+      display: grid;
+      gap: 10px;
+      animation: fadeIn 0.6s ease-out 0.55s both;
+    }
+
+    .info-item {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.95rem;
+      transition: transform 0.3s ease;
+    }
+
+    .info-item:hover {
+      transform: translateX(4px);
+    }
+
+    .info-item span:first-child {
+      color: var(--text-muted);
+      transition: color 0.4s ease;
+    }
+
+    .info-item span:last-child {
+      color: var(--heading);
+      font-weight: 500;
+      transition: color 0.4s ease;
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 28px;
+      font-size: 0.85rem;
+      color: var(--footer);
+      transition: color 0.4s ease;
+      animation: fadeIn 0.6s ease-out 0.65s both;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="about-card">
+
+    <!-- Dark/Light Toggle -->
+    <button class="theme-toggle" id="themeToggle" title="Toggle Dark/Light Mode">🌙</button>
+
+    <!-- App Icon & Title -->
+    <div class="app-icon">📷</div>
+    <h1>Camera App</h1>
+    <div class="version">Version 1.0.0</div>
+
+    <!-- About -->
+    <div class="section">
+      <h2>About Us</h2>
+      <p>
+        Camera App is a modern and lightweight camera application. 
+        We believe that capturing beautiful moments shouldn’t require complicated tools. 
+        With this app, you can easily take high-quality photos and videos.
+      </p>
+    </div>
+
+    <!-- Mission -->
+    <div class="section">
+      <h2>Our Mission</h2>
+      <p>
+        Our goal is to provide everyone with a simple, beautiful, and professional-quality camera experience.
+      </p>
+    </div>
+
+    <!-- Features -->
+    <div class="section">
+      <h2>Key Features</h2>
+      <ul class="features">
+        <li>High-resolution photos and videos</li>
+        <li>Real-time filters and beauty mode</li>
+        <li>Night mode</li>
+        <li>Fast shutter speed</li>
+        <li>Privacy focused</li>
+      </ul>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- Info -->
+    <div class="info-list">
+      <div class="info-item">
+        <span>Developer</span>
+        <span>Camera Team</span>
+      </div>
+      <div class="info-item">
+        <span>Category</span>
+        <span>Photography</span>
+      </div>
+      <div class="info-item">
+        <span>Released</span>
+        <span>2026</span>
+      </div>
+      <div class="info-item">
+        <span>Platform</span>
+        <span>Android / iOS</span>
+      </div>
+    </div>
+
+    <!-- Privacy -->
+    <div class="section" style="margin-top: 26px;">
+      <h2>Privacy</h2>
+      <p>
+        Your photos and personal data are completely safe. 
+        We do not collect or share any of your data.
+      </p>
+    </div>
+
+    <div class="footer">
+      Made with ❤️ in Bangladesh
+    </div>
+
+  </div>
+
+  <script>
+    const toggleBtn = document.getElementById('themeToggle');
+    const body = document.body;
+
+    // Check saved theme
+    if (localStorage.getItem('theme') === 'light') {
+      body.classList.add('light');
+      toggleBtn.textContent = '☀️';
+    }
+
+    toggleBtn.addEventListener('click', () => {
+      body.classList.toggle('light');
+
+      if (body.classList.contains('light')) {
+        toggleBtn.textContent = '☀️';
+        localStorage.setItem('theme', 'light');
+      } else {
+        toggleBtn.textContent = '🌙';
+        localStorage.setItem('theme', 'dark');
+      }
+    });
+  </script>
+
+</body>
+</html>
