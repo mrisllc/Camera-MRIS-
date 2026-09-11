@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terms of Service - Camera App</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg: #0f0f13;
+      --card-bg: #18181b;
+      --border: #27272a;
+      --text: #e4e4e7;
+      --text-muted: #a1a1aa;
+      --heading: #ffffff;
+      --accent: #93c5fd;
+      --footer: #71717a;
+    }
+
+    body.light {
+      --bg: #f4f4f5;
+      --card-bg: #ffffff;
+      --border: #e4e4e7;
+      --text: #3f3f46;
+      --text-muted: #71717a;
+      --heading: #18181b;
+      --accent: #2563eb;
+      --footer: #a1a1aa;
+    }
+
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      padding: 40px 20px;
+      line-height: 1.7;
+      transition: background 0.4s ease, color 0.4s ease;
+    }
+
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 40px 36px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+      position: relative;
+      animation: fadeInUp 0.6s ease-out;
+      transition: background 0.4s ease, border 0.4s ease;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .theme-toggle {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: var(--border);
+      border: none;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+
+    .theme-toggle:hover {
+      transform: scale(1.15) rotate(15deg);
+    }
+
+    h1 {
+      font-size: 1.9rem;
+      color: var(--heading);
+      margin-bottom: 8px;
+      transition: color 0.4s ease;
+    }
+
+    .updated {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      margin-bottom: 32px;
+    }
+
+    h2 {
+      font-size: 1.2rem;
+      color: var(--accent);
+      margin: 28px 0 12px;
+      transition: color 0.4s ease;
+    }
+
+    p, li {
+      color: var(--text);
+      font-size: 0.98rem;
+      margin-bottom: 12px;
+      transition: color 0.4s ease;
+    }
+
+    ul {
+      padding-left: 20px;
+      margin-bottom: 16px;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    .footer {
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      font-size: 0.9rem;
+      color: var(--footer);
+      transition: color 0.4s ease, border 0.4s ease;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <button class="theme-toggle" id="themeToggle" title="Toggle Dark/Light Mode">🌙</button>
+
+    <h1>Terms of Service</h1>
+    <div class="updated">Last updated: September 11, 2026</div>
+
+    <p>
+      Welcome to Camera App. By downloading, installing, or using our application, 
+      you agree to be bound by these Terms of Service. Please read them carefully.
+    </p>
+
+    <h2>1. Acceptance of Terms</h2>
+    <p>
+      By accessing or using Camera App, you agree to these Terms of Service and our Privacy Policy. 
+      If you do not agree with any part of these terms, you may not use the app.
+    </p>
+
+    <h2>2. Description of Service</h2>
+    <p>
+      Camera App is a mobile application that allows users to capture photos and videos, 
+      apply filters, and use various camera features. The app is provided for personal, non-commercial use.
+    </p>
+
+    <h2>3. User Responsibilities</h2>
+    <p>You agree to use Camera App only for lawful purposes. You must not:</p>
+    <ul>
+      <li>Use the app to capture or distribute illegal, harmful, or inappropriate content</li>
+      <li>Attempt to reverse engineer, modify, or hack the application</li>
+      <li>Use the app in any way that could damage, disable, or impair the service</li>
+      <li>Violate any applicable local, national, or international laws</li>
+    </ul>
+
+    <h2>4. Intellectual Property</h2>
+    <p>
+      All rights, title, and interest in Camera App (including design, code, logos, and features) 
+      remain the exclusive property of Camera Team. You may not copy, modify, distribute, or create 
+      derivative works based on the app without prior written permission.
+    </p>
+
+    <h2>5. Photos and Media</h2>
+    <p>
+      You retain full ownership of all photos and videos you capture using Camera App. 
+      We do not claim any ownership over your content. You are solely responsible for the content you create.
+    </p>
+
+    <h2>6. Disclaimer of Warranties</h2>
+    <p>
+      Camera App is provided on an "as is" and "as available" basis. 
+      We do not guarantee that the app will be error-free, uninterrupted, or free of bugs. 
+      We are not responsible for any loss of data or media stored on your device.
+    </p>
+
+    <h2>7. Limitation of Liability</h2>
+    <p>
+      To the maximum extent permitted by law, Camera Team shall not be liable for any indirect, 
+      incidental, special, or consequential damages arising out of or in connection with your use of the app.
+    </p>
+
+    <h2>8. Termination</h2>
+    <p>
+      We reserve the right to suspend or terminate your access to Camera App at any time, 
+      without notice, if you violate these Terms of Service.
+    </p>
+
+    <h2>9. Changes to Terms</h2>
+    <p>
+      We may update these Terms of Service from time to time. 
+      Continued use of the app after changes are posted constitutes your acceptance of the new terms.
+    </p>
+
+    <h2>10. Governing Law</h2>
+    <p>
+      These Terms shall be governed by and construed in accordance with the laws of Bangladesh, 
+      without regard to its conflict of law provisions.
+    </p>
+
+    <h2>11. Contact Us</h2>
+    <p>
+      If you have any questions about these Terms of Service, please contact us at:<br>
+      <strong>Email:</strong> <a href="mailto:support@cameraapp.com">support@cameraapp.com</a>
+    </p>
+
+    <div class="footer">
+      Camera App · Made with ❤️ in Bangladesh
+    </div>
+
+  </div>
+
+  <script>
+    const toggleBtn = document.getElementById('themeToggle');
+    const body = document.body;
+
+    if (localStorage.getItem('theme') === 'light') {
+      body.classList.add('light');
+      toggleBtn.textContent = '☀️';
+    }
+
+    toggleBtn.addEventListener('click', () => {
+      body.classList.toggle('light');
+
+      if (body.classList.contains('light')) {
+        toggleBtn.textContent = '☀️';
+        localStorage.setItem('theme', 'light');
+      } else {
+        toggleBtn.textContent = '🌙';
+        localStorage.setItem('theme', 'dark');
+      }
+    });
+  </script>
+
+</body>
+</html>
