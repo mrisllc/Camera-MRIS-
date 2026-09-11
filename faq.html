@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQ - Camera App</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg: #0f0f13;
+      --card-bg: #18181b;
+      --border: #27272a;
+      --text: #e4e4e7;
+      --text-muted: #a1a1aa;
+      --heading: #ffffff;
+      --accent: #93c5fd;
+      --footer: #71717a;
+      --hover-bg: #27272a;
+    }
+
+    body.light {
+      --bg: #f4f4f5;
+      --card-bg: #ffffff;
+      --border: #e4e4e7;
+      --text: #3f3f46;
+      --text-muted: #71717a;
+      --heading: #18181b;
+      --accent: #2563eb;
+      --footer: #a1a1aa;
+      --hover-bg: #f4f4f5;
+    }
+
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      padding: 40px 20px;
+      line-height: 1.6;
+      transition: background 0.4s ease, color 0.4s ease;
+    }
+
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 40px 36px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+      position: relative;
+      animation: fadeInUp 0.6s ease-out;
+      transition: background 0.4s ease, border 0.4s ease;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .theme-toggle {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: var(--border);
+      border: none;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+
+    .theme-toggle:hover {
+      transform: scale(1.15) rotate(15deg);
+    }
+
+    h1 {
+      font-size: 1.9rem;
+      color: var(--heading);
+      margin-bottom: 8px;
+    }
+
+    .subtitle {
+      color: var(--text-muted);
+      font-size: 1rem;
+      margin-bottom: 32px;
+    }
+
+    .faq-item {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      margin-bottom: 12px;
+      overflow: hidden;
+      transition: background 0.3s ease;
+    }
+
+    .faq-question {
+      padding: 18px 20px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 500;
+      color: var(--heading);
+      transition: background 0.3s ease;
+    }
+
+    .faq-question:hover {
+      background: var(--hover-bg);
+    }
+
+    .faq-question .icon {
+      font-size: 1.3rem;
+      transition: transform 0.3s ease;
+      color: var(--accent);
+    }
+
+    .faq-item.active .faq-question .icon {
+      transform: rotate(45deg);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease, padding 0.35s ease;
+      padding: 0 20px;
+      color: var(--text);
+      font-size: 0.95rem;
+    }
+
+    .faq-item.active .faq-answer {
+      max-height: 300px;
+      padding: 0 20px 18px;
+    }
+
+    .footer {
+      margin-top: 36px;
+      text-align: center;
+      font-size: 0.9rem;
+      color: var(--footer);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <button class="theme-toggle" id="themeToggle" title="Toggle Dark/Light Mode">🌙</button>
+
+    <h1>Frequently Asked Questions</h1>
+    <p class="subtitle">Quick answers to the most common questions</p>
+
+    <!-- FAQ Items -->
+    <div class="faq-item">
+      <div class="faq-question">
+        How do I take a photo?
+        <span class="icon">+</span>
+      </div>
+      <div class="faq-answer">
+        Open the app and tap the large shutter button at the bottom center of the screen. 
+        You can also press the volume buttons to take a photo on most devices.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        How do I switch between front and rear camera?
+        <span class="icon">+</span>
+      </div>
+      <div class="faq-answer">
+        Tap the camera switch icon (usually at the top or bottom right corner) to toggle between the front and rear cameras.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        How do I record a video?
+        <span class="icon">+</span>
+      </div>
+      <div class="faq-answer">
+        Swipe to Video mode or tap the video icon, then press the shutter button to start recording. 
+        Press it again to stop.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        How do I apply filters?
+        <span class="icon">+</span>
+      </div>
+      <div class="faq-answer">
+        Tap the filter icon while in camera view. Select any filter to preview it in real time, then take the photo.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        What is Night Mode?
+        <span class="icon">+</span>
+      </div>
+      <div class="faq-answer">
+        Night Mode improves photo quality in low-light conditions. It activates automatically in dark environments, 
+        or you can turn it on manually from the mode options.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        Where are my photos saved?
+        <span class="icon">+</span>
+      </div>
+      <div class="faq-answer">
+        All photos and videos are saved directly to your device’s gallery. 
+        We do not upload or store your media on our servers.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        Why can’t the app access my camera?
+        <span class="icon">+</span>
+      </div>
+      <div class="faq-answer">
+        Go to your phone Settings → Apps → Camera App → Permissions, and make sure Camera permission is allowed.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        The app is crashing. What should I do?
+        <span class="icon">+</span>
+      </div>
+      <div class="faq-answer">
+        Try these steps: Force close the app, restart your phone, clear the app cache, 
+        or update to the latest version from the app store.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        Does the app collect my personal data?
+        <span class="icon">+</span>
+      </div>
+      <div class="faq-answer">
+        No. Camera App is privacy-focused. We do not collect or store your photos or personal information.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        How can I contact support?
+        <span class="icon">+</span>
+      </div>
+      <div class="faq-answer">
+        You can email us at support@cameraapp.com. We usually respond within 24–48 hours.
+      </div>
+    </div>
+
+    <div class="footer">
+      Camera App · Made with ❤️ in Bangladesh
+    </div>
+
+  </div>
+
+  <script>
+    // Theme Toggle
+    const toggleBtn = document.getElementById('themeToggle');
+    const body = document.body;
+
+    if (localStorage.getItem('theme') === 'light') {
+      body.classList.add('light');
+      toggleBtn.textContent = '☀️';
+    }
+
+    toggleBtn.addEventListener('click', () => {
+      body.classList.toggle('light');
+      if (body.classList.contains('light')) {
+        toggleBtn.textContent = '☀️';
+        localStorage.setItem('theme', 'light');
+      } else {
+        toggleBtn.textContent = '🌙';
+        localStorage.setItem('theme', 'dark');
+      }
+    });
+
+    // Accordion
+    document.querySelectorAll('.faq-question').forEach(question => {
+      question.addEventListener('click', () => {
+        const item = question.parentElement;
+        // Close other open items
+        document.querySelectorAll('.faq-item').forEach(other => {
+          if (other !== item) other.classList.remove('active');
+        });
+        item.classList.toggle('active');
+      });
+    });
+  </script>
+
+</body>
+</html>
